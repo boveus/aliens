@@ -1,0 +1,7 @@
+<h6> Sightings shorter than 500 seconds</h6>
+<% @aliensightings.each do |sighting| %>
+     ID: <%= sighting.id %> <br />
+     Date: <%= sighting.date_posted %> <br  />
+     Duration <%= sighting.duration_in_seconds %> <br />
+     <br  />
+<% end %>
