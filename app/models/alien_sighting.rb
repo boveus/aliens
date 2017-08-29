@@ -1,0 +1,2 @@
+class AlienSighting < ApplicationRecord
+end
