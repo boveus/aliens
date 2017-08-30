@@ -1,6 +1,4 @@
-<h6> All sightings </h6>
+<h8> All sightings </h8>
 <% @aliensightings.each do |sighting| %>
-    <ul>
-      <li> <= link_to alien_sightings_path(sighting), sighting.id => <li>
-    </ul>
+  <p> <%= link_to "View sighting number #{sighting.id}", alien_sighting_path(sighting) %> </p>
 <% end %>

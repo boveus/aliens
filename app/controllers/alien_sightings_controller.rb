@@ -1,9 +1,9 @@
 class AlienSightingsController < ApplicationController
   def index
-    @aliensighting = AlienSighting.all
+    @aliensightings = AlienSighting.all
   end
-  
+
   def show
-    @aliensightings = AlienSighting.find(params[:id])
+    @sighting = AlienSighting.find(params[:id])
   end
 end
