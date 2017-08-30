@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 20170829040302) do
 
   create_table "alien_sightings", force: :cascade do |t|
-    t.date "date_posted"
+    t.datetime "date_posted"
     t.string "city"
     t.string "state"
     t.string "country"

@@ -1,7 +1,7 @@
 require 'csv'
 
 def get_date(date)
-  Date.strptime(date, "%m/%d/%Y %H:%M")
+  DateTime.strptime(date, "%m/%d/%Y %H:%M")
 end
 
 csv_text = File.read(Rails.root.join('db', 'data', 'ufo_data.csv'))

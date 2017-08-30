@@ -1,7 +1,7 @@
 class CreateAlienSightings < ActiveRecord::Migration[5.1]
   def change
     create_table :alien_sightings do |t|
-      t.date :date_posted
+      t.datetime :date_posted
       t.string :city
       t.string :state
       t.string :country
@@ -10,7 +10,7 @@ class CreateAlienSightings < ActiveRecord::Migration[5.1]
       t.text :comments
       t.float :latitude
       t.float :longitude
-      
+
       t.timestamps
     end
   end
