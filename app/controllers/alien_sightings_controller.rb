@@ -1,5 +1,9 @@
 class AlienSightingsController < ApplicationController
+  def index
+    @aliensighting = AlienSighting.all
+  end
+  
   def show
-    @aliensightings = AlienSighting.where(city: "holbrook")
+    @aliensightings = AlienSighting.find(params[:id])
   end
 end

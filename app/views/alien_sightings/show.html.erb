@@ -1,7 +1,11 @@
-<h6> Sightings shorter than 500 seconds</h6>
-<% @aliensightings.each do |sighting| %>
-     ID: <%= sighting.id %> <br />
-     Date: <%= sighting.date_posted %> <br  />
-     Duration <%= sighting.duration_in_seconds %> <br />
-     <br  />
-<% end %>
+<ul>
+  <li> Sighting Info for sighting # <%= sighting.id %><li>
+    <ul> Location <% sighting.location %> </ul>
+    <ul> Date: <%= sighting.date_posted %> </ul>
+    <ul> Duration <%= sighting.duration_in_seconds %> </ul>
+    <ul> Lat/long <%= "#{sighting.latitude}, #{sighting.longitude}" %> </ul>
+  <li> Craft Info</li>
+    <ul> Craft Shape: <%= sighting.shape %> </ul>
+  <li> Comments:  </li>
+    <ul> <% sighting.comments %> </ul>
+</ul>
