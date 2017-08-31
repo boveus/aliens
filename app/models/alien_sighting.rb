@@ -21,7 +21,8 @@ class AlienSighting < ApplicationRecord
   def self.count_by_shape
     group(:shape)
     .order("count(shape) DESC")
-    .count(29)
+    .count
+    .first(29)
   end
 
   def self.shape_by_country(shape)

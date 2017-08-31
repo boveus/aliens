@@ -27,3 +27,10 @@
   <li> Shape: <%= shape %>, <%= count %> </li>
   <% end %>
 </ol>
+
+<ol>
+  Sightings by year
+  <% @sightings_by_year.each do |date, count| %>
+  <li> Year: <%= date.year %>, <%= count %> </li>
+  <% end %>
+</ol>
