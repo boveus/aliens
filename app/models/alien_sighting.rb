@@ -4,6 +4,10 @@ class AlienSighting < ApplicationRecord
     "#{city}, #{state}, #{country}"
   end
 
+  def self.random_comment
+    find(rand(86680)).comments
+  end
+
   def self.sort_by_duration
     order("duration_in_seconds DESC")
   end
@@ -73,6 +77,8 @@ class AlienSighting < ApplicationRecord
     .count(:id)
     .first(number)
   end
+
+
 
   def self.format_for_chart(data_table)
     labels = []

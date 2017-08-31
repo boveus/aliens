@@ -31,6 +31,6 @@ include ChartHandler
   end
 
   def comments
-    @sighting_comment = AlienSighting.find(rand(86680)).comments
+    @sighting_comment = AlienSighting.random_comment
   end
 end
