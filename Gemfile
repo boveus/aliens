@@ -38,6 +38,9 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'pry'
+  gem 'sqlite3'
+  gem 'pg'
+  gem 'taps'
 end
 
 group :development do

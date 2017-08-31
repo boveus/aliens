@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170829040302) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "alien_sightings", force: :cascade do |t|
     t.datetime "date_posted"
     t.string "city"

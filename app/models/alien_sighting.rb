@@ -48,8 +48,10 @@ class AlienSighting < ApplicationRecord
     .first(number)
   end
 
-  def self.count_by_year
-    # select(date_trunc('year', date_posted))
-    # .group_by(date_posted)
+  def self.count_by_year(number = 10)
+    group("DATE_TRUNC('year', date_posted)")
+    .order("count(year) DESC")
+    .count(:id)
+    .first(number)
   end
 end
