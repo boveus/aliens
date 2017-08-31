@@ -7,10 +7,7 @@ Rails.application.routes.draw do
   get 'dashboard/years', :to => 'main#years', :as => 'years'
   get 'dashboard/states', :to => 'main#states', :as => 'states'
   get 'dashboard/countries', :to => 'main#countries', :as => 'countries'
-
-  scope controller: :main do
-    get :dashboard
-    get :map
-  end
+  get '/dashboard', :to => 'main#dashboard', :as => 'dashboard'
+  get '/map', :to => 'main#map', :as => 'map'
   resources :alien_sightings, only: [:index, :show]
 end
