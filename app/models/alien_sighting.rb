@@ -19,10 +19,12 @@ class AlienSighting < ApplicationRecord
   end
 
   def self.count_by_shape
+    format_for_chart(
     group(:shape)
     .order("count(shape) DESC")
     .count
     .first(29)
+    )
   end
 
   def self.shape_by_country(shape)
@@ -65,5 +67,15 @@ class AlienSighting < ApplicationRecord
     .order("count(date_posted) DESC")
     .count(:id)
     .first(number)
+  end
+
+  def self.format_for_chart(data_table)
+    labels = []
+    data = []
+    data_table.each do |nested_array|
+      labels << nested_array[0]
+      data << nested_array[1]
+    end
+    return labels, data
   end
 end

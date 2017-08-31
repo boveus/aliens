@@ -1,4 +1,5 @@
 class MainController < ApplicationController
+include DataHandler
   def index
   end
 
@@ -6,7 +7,7 @@ class MainController < ApplicationController
     @country_counts = AlienSighting.count_by_country
     @city_counts = AlienSighting.count_by_cities
     @state_counts = AlienSighting.count_by_state
-    @object_shape_counts = AlienSighting.count_by_shape
+    @shape_chart = shape_chart
     @sightings_by_year = AlienSighting.count_by_year
   end
 

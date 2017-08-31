@@ -41,6 +41,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'pg'
   gem 'taps'
+  gem 'chartjs-ror'
 end
 
 group :development do
