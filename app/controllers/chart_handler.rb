@@ -4,6 +4,11 @@ module ChartHandler
     setup_chart(shape_label, shape_data, 'Reported Shapes')
   end
 
+  def country_chart
+    shape_label, shape_data = AlienSighting.count_by_country
+    setup_chart(shape_label, shape_data, 'Sightings by country')
+  end
+
   def setup_chart(data_label, chart_data, chart_label)
     {
     labels: data_label,

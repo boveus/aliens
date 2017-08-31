@@ -1,13 +1,7 @@
 <h3> ITS A DASHBOARD </h3>
 
-<%= pie_chart @shape_chart, {:width => 100, :height => 100} %>
-
-<ol>
-  Sightings by Country
-  <% @country_counts.each do |country, count| %>
-  <li> Country: <%= country %>, <%= count %> </li>
-  <% end %>
-</ol>
+<%= pie_chart @shape_chart, {:width => 50, :height => 100} %>
+<%= bar_chart @country_chart %>
 
 <ol>
   Sightings by US city

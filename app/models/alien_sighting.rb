@@ -34,10 +34,12 @@ class AlienSighting < ApplicationRecord
   end
 
   def self.count_by_country
+    format_for_chart(
     group(:country)
     .order("count(country) DESC")
     .count
     .first(5)
+    )
   end
 
   def self.count_by_cities(country = 'us', number = 10)

@@ -4,7 +4,7 @@ include ChartHandler
   end
 
   def dashboard
-    @country_counts = AlienSighting.count_by_country
+    @country_chart = country_chart
     @city_counts = AlienSighting.count_by_cities
     @state_counts = AlienSighting.count_by_state
     @shape_chart = shape_chart
