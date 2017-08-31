@@ -5,10 +5,10 @@ include ChartHandler
 
   def dashboard
     @country_chart = country_chart
-    @city_counts = AlienSighting.count_by_cities
-    @state_counts = AlienSighting.count_by_state
+    @city_chart = city_chart
+    @state_chart = state_chart
     @shape_chart = shape_chart
-    @sightings_by_year = AlienSighting.count_by_year
+    @year_chart = year_chart
   end
 
   def map

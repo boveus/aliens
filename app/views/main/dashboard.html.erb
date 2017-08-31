@@ -1,25 +1,7 @@
 <h3> ITS A DASHBOARD </h3>
 
-<%= pie_chart @shape_chart, {:width => 50, :height => 100} %>
+<%= pie_chart @shape_chart %>
 <%= bar_chart @country_chart %>
-
-<ol>
-  Sightings by US city
-  <% @city_counts.each do |city, count| %>
-  <li> City: <%= city %>, <%= count %>  </li>
-  <% end %>
-</ol>
-
-<ol>
-  Sightings by US state
-  <% @state_counts.each do |state, count| %>
-  <li> State: <%= state %>, <%= count %> </li>
-  <% end %>
-</ol>
-
-<ol>
-  Sightings by year
-  <% @sightings_by_year.each do |date, count| %>
-  <li> Year: <%= date.year %>, <%= count %> </li>
-  <% end %>
-</ol>
+<%= horizontal_bar_chart @city_chart %>
+<%= horizontal_bar_chart @state_chart %>
+<%= horizontal_bar_chart @year_chart %>

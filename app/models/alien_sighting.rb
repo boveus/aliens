@@ -43,25 +43,28 @@ class AlienSighting < ApplicationRecord
   end
 
   def self.count_by_cities(country = 'us', number = 10)
+    format_for_chart(
     where(country: country)
     .group(:city)
     .order("count(city) DESC")
     .count(:id)
-    .first(number)
+    .first(number))
   end
 
   def self.count_by_state(number = 10)
+    format_for_chart(
     group(:state)
     .order("count(state) DESC")
     .count(:id)
-    .first(number)
+    .first(number))
   end
 
   def self.count_by_year(number = 10)
+    format_for_chart(
     group("DATE_TRUNC('year', date_posted)")
     .order("count(date_posted) DESC")
     .count(:id)
-    .first(number)
+    .first(number))
   end
 
   def self.count_by_month(number = 10)
