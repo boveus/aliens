@@ -29,4 +29,8 @@ include ChartHandler
   def map
     @all_sightings = AlienSighting.all
   end
+
+  def comments
+    @sighting_comment = AlienSighting.find(rand(86680)).comments
+  end
 end

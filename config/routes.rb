@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   get 'dashboard/countries', :to => 'main#countries', :as => 'countries'
   get '/dashboard', :to => 'main#dashboard', :as => 'dashboard'
   get '/map', :to => 'main#map', :as => 'map'
+  get '/comments', :to => 'main#comments', :as => 'comments'
   resources :alien_sightings, only: [:index, :show]
 end
