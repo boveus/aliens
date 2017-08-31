@@ -1,5 +1,7 @@
 {
   "name": "aliens",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "chart.js": "^2.6.0"
+  }
 }
