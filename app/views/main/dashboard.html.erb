@@ -1,9 +1,29 @@
 <h3> ITS A DASHBOARD </h3>
 
-<p>
-   here's some analysis.
-</p>
+<ol>
+  Sightings by Country
+  <% @country_counts.each do |country, count| %>
+  <li> Country: <%= country %>, <%= count %> </li>
+  <% end %>
+</ol>
 
-<a>
-  here is some more analysis.
-</a>
+<ol>
+  Sightings by US city
+  <% @city_counts.each do |city, count| %>
+  <li> City: <%= city %>, <%= count %>  </li>
+  <% end %>
+</ol>
+
+<ol>
+  Sightings by US state
+  <% @state_counts.each do |state, count| %>
+  <li> State: <%= state %>, <%= count %> </li>
+  <% end %>
+</ol>
+
+<ol>
+  Sightings by shape of object
+  <% @object_shape_counts.each do |shape, count| %>
+  <li> Shape: <%= shape %>, <%= count %> </li>
+  <% end %>
+</ol>

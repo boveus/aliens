@@ -20,7 +20,8 @@ class AlienSighting < ApplicationRecord
 
   def self.count_by_shape
     group(:shape)
-    .count
+    .order("count(shape) DESC")
+    .count(29)
   end
 
   def self.shape_by_country(shape)
@@ -30,7 +31,10 @@ class AlienSighting < ApplicationRecord
   end
 
   def self.count_by_country
-    group(:country).count
+    group(:country)
+    .order("count(country) DESC")
+    .count
+    .first(5)
   end
 
   def self.count_by_cities(country = 'us', number = 10)
@@ -50,7 +54,14 @@ class AlienSighting < ApplicationRecord
 
   def self.count_by_year(number = 10)
     group("DATE_TRUNC('year', date_posted)")
-    .order("count(year) DESC")
+    .order("count(date_posted) DESC")
+    .count(:id)
+    .first(number)
+  end
+
+  def self.count_by_month(number = 10)
+    group("DATE_TRUNC('month', date_posted)")
+    .order("count(date_posted) DESC")
     .count(:id)
     .first(number)
   end
