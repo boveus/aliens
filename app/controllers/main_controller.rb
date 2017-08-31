@@ -1,5 +1,5 @@
 class MainController < ApplicationController
-include DataHandler
+include ChartHandler
   def index
   end
 
