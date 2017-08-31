@@ -1,7 +1,7 @@
 <h3> ITS A DASHBOARD </h3>
 
-<%= pie_chart @shape_chart %>
-<%= bar_chart @country_chart %>
-<%= horizontal_bar_chart @city_chart %>
-<%= horizontal_bar_chart @state_chart %>
-<%= horizontal_bar_chart @year_chart %>
+<%= link_to 'Sightings by US state', states_path %> <br />
+<%= link_to 'Sightings by country', countries_path %> <br />
+<%= link_to 'Sightings by year', years_path %> <br />
+<%= link_to 'Sightings by US city', cities_path %> <br />
+<%= link_to 'Total sightings by reported shape', shapes_path %>
