@@ -24,11 +24,11 @@ include ChartHandler
   end
 
   def shape_by_state
-    @state_shape_chart = state_shape_chart(params["shape"])
+    @state_shape_chart = state_shape_chart(params[:shape])
   end
 
   def dashboard
-    @states = AlienSighting.all_states
+    @shapes = AlienSighting.all_shapes
   end
 
   def map

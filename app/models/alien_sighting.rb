@@ -76,6 +76,10 @@ class AlienSighting < ApplicationRecord
     distinct.pluck(:state)
   end
 
+  def self.all_shapes
+    distinct.pluck(:shape)
+  end
+
   def self.count_by_year(number = 10)
     format_for_chart(
     group("DATE_TRUNC('year', date_posted)")
