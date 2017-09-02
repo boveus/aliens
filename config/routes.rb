@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'dashboard/cities', :to => 'main#cities', :as => 'cities'
   get 'dashboard/years', :to => 'main#years', :as => 'years'
   get 'dashboard/states', :to => 'main#states', :as => 'states'
+  get 'dashboard/shapebystate', :to => 'main#shape_by_state', :as => 'shape_by_state'
   get 'dashboard/countries', :to => 'main#countries', :as => 'countries'
   get '/dashboard', :to => 'main#dashboard', :as => 'dashboard'
   get '/map', :to => 'main#map', :as => 'map'

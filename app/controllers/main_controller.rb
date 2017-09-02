@@ -23,7 +23,12 @@ include ChartHandler
     @year_chart = year_chart
   end
 
+  def shape_by_state
+    @state_shape_chart = state_shape_chart(params["shape"])
+  end
+
   def dashboard
+    @states = AlienSighting.all_states
   end
 
   def map

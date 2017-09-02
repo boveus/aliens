@@ -37,6 +37,15 @@ class AlienSighting < ApplicationRecord
     .count
   end
 
+  def self.shape_by_state(shape)
+    format_for_chart(
+    where(shape: shape, country: 'us')
+    .group(:state)
+    .order("count(state) DESC")
+    .count
+    )
+  end
+
   def self.count_by_country
     format_for_chart(
     group(:country)
@@ -63,6 +72,10 @@ class AlienSighting < ApplicationRecord
     .first(number))
   end
 
+  def self.all_states
+    distinct.pluck(:state)
+  end
+
   def self.count_by_year(number = 10)
     format_for_chart(
     group("DATE_TRUNC('year', date_posted)")
@@ -77,8 +90,6 @@ class AlienSighting < ApplicationRecord
     .count(:id)
     .first(number)
   end
-
-
 
   def self.format_for_chart(data_table)
     labels = []

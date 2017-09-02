@@ -4,4 +4,15 @@
 <%= link_to 'Sightings by country', countries_path %> <br />
 <%= link_to 'Sightings by year', years_path %> <br />
 <%= link_to 'Sightings by US city', cities_path %> <br />
-<%= link_to 'Total sightings by reported shape', shapes_path %>
+<%= link_to 'Total sightings by reported shape', shapes_path %> <br />
+<%= link_to 'Shapes by state', shape_by_state_path(state: 'ca') %> <br />
+
+
+<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+  <div id="myDropdown" class="dropdown-content">
+    <% @states.each do |state| %>
+    <a href="#"><%= link_to state, shape_by_state_path(state: state) %></a>
+    <%end%>
+  </div>
+</div>

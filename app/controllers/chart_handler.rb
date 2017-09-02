@@ -24,6 +24,11 @@ module ChartHandler
     setup_chart(year_label, year_data, 'Sightings by year')
   end
 
+  def state_shape_chart(shape)
+    state_shape_label, state_shape_data = AlienSighting.shape_by_state(shape)
+    setup_chart(state_shape_label, state_shape_data, "#{shape} sightings by state")
+  end
+
   def setup_chart(data_label, chart_data, chart_label)
     {
     labels: data_label,
