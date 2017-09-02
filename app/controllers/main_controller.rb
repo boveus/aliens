@@ -27,6 +27,10 @@ include ChartHandler
     @state_shape_chart = state_shape_chart(params[:shape])
   end
 
+  def per_capita_by_state
+    @per_capita_by_state_chart = per_capita_state_chart
+  end
+
   def dashboard
     @shapes = AlienSighting.all_shapes
   end
@@ -35,7 +39,11 @@ include ChartHandler
     @all_sightings = AlienSighting.all
   end
 
+
+
   def comments
     @sighting_comment = AlienSighting.random_comment
   end
+
+
 end

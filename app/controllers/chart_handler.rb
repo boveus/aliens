@@ -29,6 +29,11 @@ module ChartHandler
     setup_chart(state_shape_label, state_shape_data, "#{shape} sightings by state")
   end
 
+  def per_capita_state_chart
+    per_capita_label, per_capita_data = AlienSighting.get_per_capita_sightings_by_state
+    setup_chart(per_capita_label, per_capita_data, "Sightings by state per capita")
+  end
+  
   def setup_chart(data_label, chart_data, chart_label)
     {
     labels: data_label,

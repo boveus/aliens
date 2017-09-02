@@ -55,21 +55,27 @@ class AlienSighting < ApplicationRecord
     )
   end
 
-  def self.count_by_cities(country = 'us', number = 10)
-    format_for_chart(
+  def self.get_count_by_cities(country = 'us', number = 10)
     where(country: country)
     .group(:city)
     .order("count(city) DESC")
     .count(:id)
-    .first(number))
+    .first(number)
   end
 
-  def self.count_by_state(number = 10)
-    format_for_chart(
+  def self.count_by_cities(country = 'us', number = 10)
+    format_for_chart(get_count_by_cities(country, number))
+  end
+
+  def self.get_count_by_state(number = 10)
     group(:state)
     .order("count(state) DESC")
     .count(:id)
-    .first(number))
+    .first(number)
+  end
+
+  def self.count_by_state(number = 10)
+    format_for_chart(get_count_by_state(number))
   end
 
   def self.all_states
@@ -80,12 +86,15 @@ class AlienSighting < ApplicationRecord
     distinct.pluck(:shape)
   end
 
-  def self.count_by_year(number = 10)
-    format_for_chart(
+  def self.calculate_count_by_year(number = 10)
     group("DATE_TRUNC('year', date_posted)")
     .order("count(date_posted) DESC")
     .count(:id)
-    .first(number))
+    .first(number)
+  end
+
+  def self.count_by_year(number = 10)
+    format_for_chart(calculate_count_by_year(number))
   end
 
   def self.count_by_month(number = 10)
@@ -93,6 +102,32 @@ class AlienSighting < ApplicationRecord
     .order("count(date_posted) DESC")
     .count(:id)
     .first(number)
+  end
+
+  def self.get_count_by_state(number = 10)
+    where(country: 'us')
+    .group(:state)
+    .order("count(state) DESC")
+    .count(:id)
+    .first(number)
+  end
+
+  def self.get_per_capita_sightings_by_state(number = 50)
+    per_capita_hash = {}
+    state_sightings = get_count_by_state(number)
+    state_sightings.each do |sighting_count|
+      state = sighting_count[0]
+      count = sighting_count[1]
+      per_capita_hash[state] = (count / StatePopulation.of(state).first.to_f).round(6)
+    end
+    per_capita_hash = Hash[per_capita_hash.sort_by{|k, v| v}.reverse]
+    labels = []
+    data = []
+    per_capita_hash.each do |key, value|
+      labels << key
+      data << value
+    end
+    return labels, data
   end
 
   def self.format_for_chart(data_table)
