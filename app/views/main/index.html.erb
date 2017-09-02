@@ -1,12 +1,11 @@
-<h3>Because Aliens</h3>
+<header class=eqi-container>
+  <%= link_to 'Analysis Dashboard', :dashboard %>
 
-<%= link_to 'Analysis Dashboard', :dashboard %>
+  <%= link_to 'Total Sightings', :total_sightings_map %>
 
-<%= link_to 'Total Sightings', :total_sightings_map %>
+  <%= link_to 'Total Sightings Per Capita', :per_capita_map %>
 
-<%= link_to 'Total Sightings Per Capita', :per_capita_map %>
+  <%= link_to 'Random sighting comments', :comments %>
+</header>
 
-<%= link_to 'Random sighting comments', :comments %>
-<br />
-
-<%= image_tag('aliens.jpg', size: "860x600") %>
+<%= image_tag('aliens.jpg', size: "1095x768") %>
