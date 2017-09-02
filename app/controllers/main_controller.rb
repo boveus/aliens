@@ -36,7 +36,7 @@ include ChartHandler
   end
 
   def map
-    @all_sightings = AlienSighting.all
+    @sightings = AlienSighting.get_alphabetical_count_by_state
   end
 
 

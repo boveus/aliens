@@ -112,6 +112,13 @@ class AlienSighting < ApplicationRecord
     .first(number)
   end
 
+  def self.get_alphabetical_count_by_state
+    where(country: 'us')
+    .group(:state)
+    .order("state ASC")
+    .count(:id)
+  end
+
   def self.get_per_capita_sightings_by_state(number = 50)
     per_capita_hash = {}
     state_sightings = get_count_by_state(number)

@@ -1,6 +1,187 @@
-<div>
-     <iframe width="500" height="400" frameborder="0" src="https://www.bing.com/maps/embed?h=400&w=500&cp=39.7456~-104.9935&lvl=3&typ=d&sty=r&src=SHELL&FORM=MBEDV8" scrolling="no">
-     </iframe>
-     <div style="white-space: nowrap; text-align: center; width: 500px; padding: 6px 0;">
-    </div>
-</div>
+<h3> Heatmap of Total Sightings </h3>
+
+<script src="https://www.amcharts.com/lib/3/ammap.js"></script>
+<script src="https://www.amcharts.com/lib/3/maps/js/usaLow.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+<div id="chartdiv"></div>
+
+<script>
+var map = AmCharts.makeChart( "chartdiv", {
+  "type": "map",
+  "theme": "light",
+  "colorSteps": 10,
+
+  "dataProvider": {
+    "map": "usaLow",
+    "areas": [ {
+      "id": "US-AL",
+      "value": <%= @sightings["ak"] %>
+    }, {
+      "id": "US-AK",
+      "value": <%= @sightings["al"] %>
+    }, {
+      "id": "US-AZ",
+      "value":  <%= @sightings["az"] %>
+    }, {
+      "id": "US-AR",
+      "value":  <%= @sightings["ar"] %>
+    }, {
+      "id": "US-CA",
+      "value":  <%= @sightings["ca"] %>
+    }, {
+      "id": "US-CO",
+      "value":  <%= @sightings["co"] %>
+
+    }, {
+      "id": "US-CT",
+      "value":  <%= @sightings["ct"] %>
+    }, {
+      "id": "US-DE",
+      "value":  <%= @sightings["de"] %>
+    }, {
+      "id": "US-FL",
+      "value":  <%= @sightings["fl"] %>
+    }, {
+      "id": "US-GA",
+      "value":  <%= @sightings["ga"] %>
+    }, {
+      "id": "US-HI",
+      "value":  <%= @sightings["hi"] %>
+    }, {
+      "id": "US-ID",
+      "value":  <%= @sightings["id"] %>
+    }, {
+      "id": "US-IL",
+      "value":  <%= @sightings["il"] %>
+    }, {
+      "id": "US-IN",
+      "value":  <%= @sightings["in"] %>
+    }, {
+      "id": "US-IA",
+      "value":  <%= @sightings["ia"] %>
+    }, {
+      "id": "US-KS",
+      "value":  <%= @sightings["ks"] %>
+    }, {
+      "id": "US-KY",
+      "value":  <%= @sightings["ky"] %>
+    }, {
+      "id": "US-LA",
+      "value":  <%= @sightings["la"] %>
+    }, {
+      "id": "US-ME",
+      "value":  <%= @sightings["me"] %>
+    }, {
+      "id": "US-MD",
+      "value":  <%= @sightings["md"] %>
+    }, {
+      "id": "US-MA",
+      "value":  <%= @sightings["ma"] %>
+    }, {
+      "id": "US-MI",
+      "value":  <%= @sightings["mi"] %>
+    }, {
+      "id": "US-MN",
+      "value":  <%= @sightings["mn"] %>
+    }, {
+      "id": "US-MS",
+      "value":  <%= @sightings["ms"] %>
+    }, {
+      "id": "US-MO",
+      "value":  <%= @sightings["mo"] %>
+    }, {
+      "id": "US-MT",
+      "value":  <%= @sightings["mt"] %>
+    }, {
+      "id": "US-NE",
+      "value":  <%= @sightings["ne"] %>
+    }, {
+      "id": "US-NV",
+      "value":  <%= @sightings["nv"] %>
+    }, {
+      "id": "US-NH",
+      "value":  <%= @sightings["nh"] %>
+    }, {
+      "id": "US-NJ",
+      "value":  <%= @sightings["nj"] %>
+    }, {
+      "id": "US-NM",
+      "value":  <%= @sightings["nm"] %>
+    }, {
+      "id": "US-NY",
+      "value":  <%= @sightings["ny"] %>
+    }, {
+      "id": "US-NC",
+      "value":  <%= @sightings["nc"] %>
+    }, {
+      "id": "US-ND",
+      "value":  <%= @sightings["nd"] %>
+    }, {
+      "id": "US-OH",
+      "value":  <%= @sightings["oh"] %>
+    }, {
+      "id": "US-OK",
+      "value":  <%= @sightings["ok"] %>
+    }, {
+      "id": "US-OR",
+      "value":  <%= @sightings["or"] %>
+    }, {
+      "id": "US-PA",
+      "value":  <%= @sightings["pa"] %>
+    }, {
+      "id": "US-RI",
+      "value":  <%= @sightings["ri"] %>
+    }, {
+      "id": "US-SC",
+      "value":  <%= @sightings["sc"] %>
+    }, {
+      "id": "US-SD",
+      "value":  <%= @sightings["sd"] %>
+    }, {
+      "id": "US-TN",
+      "value":  <%= @sightings["tn"] %>
+    }, {
+      "id": "US-TX",
+      "value":  <%= @sightings["tx"] %>
+    }, {
+      "id": "US-UT",
+      "value":  <%= @sightings["ut"] %>
+    }, {
+      "id": "US-VT",
+      "value":  <%= @sightings["vt"] %>
+    }, {
+      "id": "US-VA",
+      "value":  <%= @sightings["va"] %>
+    }, {
+      "id": "US-WA",
+      "value":  <%= @sightings["wa"] %>
+    }, {
+      "id": "US-WV",
+      "value":  <%= @sightings["wv"] %>
+    }, {
+      "id": "US-WI",
+      "value":  <%= @sightings["wi"] %>
+    }, {
+      "id": "US-WY",
+      "value":  <%= @sightings["wy"] %>
+    } ]
+  },
+
+  "areasSettings": {
+    "autoZoom": true
+  },
+
+  "valueLegend": {
+    "right": 10,
+    "minValue": "little",
+    "maxValue": "a lot!"
+  },
+
+  "export": {
+    "enabled": true
+  }
+
+} );
+</script>
