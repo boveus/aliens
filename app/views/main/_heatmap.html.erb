@@ -1,5 +1,3 @@
-<h3> Heatmap of Total Sightings </h3>
-
 <script src="https://www.amcharts.com/lib/3/ammap.js"></script>
 <script src="https://www.amcharts.com/lib/3/maps/js/usaLow.js"></script>
 <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
@@ -17,10 +15,10 @@ var map = AmCharts.makeChart( "chartdiv", {
     "map": "usaLow",
     "areas": [ {
       "id": "US-AL",
-      "value": <%= @sightings["ak"] %>
+      "value": <%= @sightings["al"] %>
     }, {
       "id": "US-AK",
-      "value": <%= @sightings["al"] %>
+      "value": <%= @sightings["ak"] %>
     }, {
       "id": "US-AZ",
       "value":  <%= @sightings["az"] %>

@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   get 'dashboard/countries', :to => 'main#countries', :as => 'countries'
   get 'dashboard/percapitabystate', :to => 'main#per_capita_by_state', :as => 'per_capita_by_state'
   get '/dashboard', :to => 'main#dashboard', :as => 'dashboard'
-  get '/map', :to => 'main#map', :as => 'map'
+  get '/total_sightings_map', :to => 'main#total_sightings_map', :as => 'total_sightings_map'
+get '/per_capita_map', :to => 'main#per_capita_map', :as => 'per_capita_map'
   get '/comments', :to => 'main#comments', :as => 'comments'
   resources :alien_sightings, only: [:index, :show]
 end

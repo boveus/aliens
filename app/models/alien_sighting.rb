@@ -137,6 +137,17 @@ class AlienSighting < ApplicationRecord
     return labels, data
   end
 
+  def self.per_capita_sightings_hash
+    per_capita_hash = {}
+    state_sightings = get_count_by_state(50)
+    state_sightings.each do |sighting_count|
+      state = sighting_count[0]
+      count = sighting_count[1]
+      per_capita_hash[state] = (count / StatePopulation.of(state).first.to_f).round(6)
+    end
+    per_capita_hash = Hash[per_capita_hash.sort_by{|k, v| v}.reverse]
+  end
+
   def self.format_for_chart(data_table)
     labels = []
     data = []

@@ -35,15 +35,15 @@ include ChartHandler
     @shapes = AlienSighting.all_shapes
   end
 
-  def map
+  def total_sightings_map
     @sightings = AlienSighting.get_alphabetical_count_by_state
   end
 
-
+  def per_capita_map
+    @sightings = AlienSighting.per_capita_sightings_hash
+  end
 
   def comments
     @sighting_comment = AlienSighting.random_comment
   end
-
-
 end
