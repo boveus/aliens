@@ -5,7 +5,7 @@ class AlienSighting < ApplicationRecord
   end
 
   def self.random_comment
-    find(rand(86680)).comments
+    find(rand(80332)).comments
   end
 
   def self.sort_by_duration
