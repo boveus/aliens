@@ -5,11 +5,10 @@
 <%= link_to 'Sightings by year', years_path %> <br />
 <%= link_to 'Sightings by US city', cities_path %> <br />
 <%= link_to 'Total sightings by reported shape', shapes_path %> <br />
-<%= link_to 'Shapes by state', shape_by_state_path(shape: 'triangle') %> <br />
 
-
+<br />
 <div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+  <button onclick="myFunction()" class="dropbtn">Shape count by state</button>
   <div id="myDropdown" class="dropdown-content">
     <% @shapes.each do |shape| %>
     <a href='<%= shape_by_state_path(shape: shape) %>'><%= shape %></a>
