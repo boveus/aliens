@@ -15,12 +15,14 @@
 
   <header class=eqi-container>
     <%= link_to 'Analysis Dashboard', :dashboard %>
-
-    <%= link_to 'Total Sightings', :total_sightings_map %>
-
-    <%= link_to 'Total Sightings Per Capita', :per_capita_map %>
-
     <%= link_to 'Random sighting comments', :comments %>
+    <div class="dropdown">
+      <button onclick="heatMaps()" class="dropbtn">Heatmaps of the US</button>
+      <div id="heatmaps" class="dropdown-content">
+        <%= link_to 'Total Sightings Per Capita', :per_capita_map %>
+        <%= link_to 'Total Sightings', :total_sightings_map %>
+      </div>
+    </div>
   </header>
 
 
@@ -29,6 +31,9 @@
   </body>
 
   <script>
+  function heatMaps() {
+      document.getElementById("heatmaps").classList.toggle("show");
+  }
 
   function myFunction() {
       document.getElementById("myDropdown").classList.toggle("show");
