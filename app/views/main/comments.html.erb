@@ -1,5 +1,11 @@
-<h4>Random Comment</h4>
-<%= @sighting_comment %>
+<div class="divWrapper">
+  <article>
+    <form><input class=button type=button value="Random Comment" onClick="window.location.reload()"></form>
+    <br />
+    In <%= @state.upcase %>, someone reported the following: <br /> <br />
+    <%= raw @sighting_comment %>
+  </article>
 <br />
 <br />
-<%= image_tag('saucer.jpg', size: "660x500") %>
+<%= image_tag('saucer.jpg', size: "660x500")  %>
+</div>

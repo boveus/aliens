@@ -44,6 +44,6 @@ include ChartHandler
   end
 
   def comments
-    @sighting_comment = AlienSighting.random_comment
+    @state, @sighting_comment = AlienSighting.random_comment
   end
 end

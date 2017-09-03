@@ -5,7 +5,12 @@ class AlienSighting < ApplicationRecord
   end
 
   def self.random_comment
-    find(rand(80332)).comments
+    sighting = find(rand(80332))
+    if sighting.state
+      return sighting.state, sighting.comments
+    else
+      return 'an unknown location', sighting.comments
+    end
   end
 
   def self.sort_by_duration

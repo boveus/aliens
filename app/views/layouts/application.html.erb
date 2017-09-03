@@ -8,6 +8,22 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
+
+<body id="index" class="home">
+</body>
+</html>
+
+  <header class=eqi-container>
+    <%= link_to 'Analysis Dashboard', :dashboard %>
+
+    <%= link_to 'Total Sightings', :total_sightings_map %>
+
+    <%= link_to 'Total Sightings Per Capita', :per_capita_map %>
+
+    <%= link_to 'Random sighting comments', :comments %>
+  </header>
+
+
   <body>
     <%= yield %>
   </body>
