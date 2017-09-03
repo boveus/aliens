@@ -1,13 +1,10 @@
 <article>
-<%= link_to 'Total sightings by US state', states_path %> <br />
-<%= link_to 'Total sightings per capita by US state', per_capita_by_state_path %> <br />
-<%= link_to 'Sightings by country', countries_path %> <br />
-<%= link_to 'Sightings by year', years_path %> <br />
-<%= link_to 'Sightings by US city', cities_path %> <br />
-<%= link_to 'Total sightings by reported shape', shapes_path %> <br />
-</article>
-
-<br />
+<%= link_to 'Total sightings by US state', states_path, class: "dropbtn" %> <br />
+<%= link_to 'Total sightings per capita by US state', per_capita_by_state_path, class: "dropbtn" %> <br />
+<%= link_to 'Sightings by country', countries_path, class: "dropbtn" %> <br />
+<%= link_to 'Sightings by year', years_path, class: "dropbtn" %> <br />
+<%= link_to 'Sightings by US city', cities_path, class: "dropbtn" %> <br />
+<%= link_to 'Total sightings by reported shape', shapes_path, class: "dropbtn" %> <br />
 <div class="dropdown">
   <button onclick="myFunction()" class="dropbtn">Shape count by state</button>
   <div id="myDropdown" class="dropdown-content">
@@ -16,3 +13,4 @@
     <%end%>
   </div>
 </div>
+</article>
