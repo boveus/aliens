@@ -41,12 +41,18 @@ class AlienSighting < ApplicationRecord
     .count
   end
 
+  def self.by_hour_of_day
+    group("date_part('hour', date_posted)")
+    .order("count(date_posted) DESC")
+    .count
+  end
+
   def self.shape_by_state(shape)
     format_for_chart(
     where(shape: shape, country: 'us')
     .group(:state)
     .order("count(state) DESC")
-    .count
+    .count(:id)
     )
   end
 
@@ -91,7 +97,7 @@ class AlienSighting < ApplicationRecord
   end
 
   def self.calculate_count_by_year(number = 10)
-    group("DATE_TRUNC('year', date_posted)")
+    group("date_part('year', date_posted)")
     .order("count(date_posted) DESC")
     .count(:id)
     .first(number)
