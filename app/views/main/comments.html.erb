@@ -2,8 +2,9 @@
   <article>
     <form><input class=button type=button value="Random Comment" onClick="window.location.reload()"></form>
     <br />
-    In <%= @state.upcase %>, someone reported the following: <br /> <br />
-    <%= raw @sighting_comment %>
+    In the year <%= @sighting.year %> in <%= @sighting.location%>
+    someone reported a <%= @sighting.shape %>-shaped UFO with the following description: <br /> <br />
+    <%= raw @sighting.comments %>
   </article>
 <br />
 <br />

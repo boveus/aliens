@@ -4,13 +4,12 @@ class AlienSighting < ApplicationRecord
     "#{city}, #{state}, #{country}"
   end
 
-  def self.random_comment
+  def year
+    date_posted.to_time.year
+  end
+
+  def self.random_sighting
     sighting = find(rand(80332))
-    if sighting.state
-      return sighting.state, sighting.comments
-    else
-      return 'an unknown location', sighting.comments
-    end
   end
 
   def self.sort_by_duration
