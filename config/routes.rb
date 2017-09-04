@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'main#index'
+  get 'dashboard/bytimeofday', :to => 'main#time_of_day', :as => 'by_time_of_day'
   get 'dashboard/shapes', :to => 'main#shapes', :as => 'shapes'
   get 'dashboard/cities', :to => 'main#cities', :as => 'cities'
   get 'dashboard/years', :to => 'main#years', :as => 'years'

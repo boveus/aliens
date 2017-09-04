@@ -33,7 +33,12 @@ module ChartHandler
     per_capita_label, per_capita_data = AlienSighting.get_per_capita_sightings_by_state
     setup_chart(per_capita_label, per_capita_data, "Sightings by state per capita")
   end
-  
+
+  def time_of_day_chart
+    by_hour_label, by_hour_data = AlienSighting.by_hour_of_day
+    setup_chart(by_hour_label, by_hour_data, "Sightings by hour")
+  end
+
   def setup_chart(data_label, chart_data, chart_label)
     {
     labels: data_label,

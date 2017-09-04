@@ -31,6 +31,10 @@ include ChartHandler
     @per_capita_by_state_chart = per_capita_state_chart
   end
 
+  def time_of_day
+    @time_of_day_chart = time_of_day_chart
+  end
+
   def dashboard
     @shapes = AlienSighting.all_shapes
   end
