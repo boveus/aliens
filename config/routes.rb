@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   get '/total_sightings_map', :to => 'main#total_sightings_map', :as => 'total_sightings_map'
   get '/per_capita_map', :to => 'main#per_capita_map', :as => 'per_capita_map'
   get '/comments', :to => 'main#comments', :as => 'comments'
+  resources :alien_sightings, only: [:new, :create]
 end

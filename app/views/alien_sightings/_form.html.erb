@@ -1,0 +1,21 @@
+<%= form_for @sighting do |f| %>
+  <%= f.label "Date of sighting" %>
+  <%= f.datetime_select :date_posted %>
+<br />
+  <%= f.label :city %>
+  <%= f.text_field :city%>
+<br />
+  <%= f.label :country %>
+  <%= f.select :country, AlienSighting.all_countries %>
+<br />
+  <%= f.label :shape %>
+  <%= f.select :shape, AlienSighting.all_shapes %>
+<br />
+  <%= f.label :duration_in_seconds %>
+  <%= f.number_field :duration_in_seconds %>
+<br />
+  <%= f.label :comments %>
+  <%= f.text_field :comments %>
+<br />
+  <%= f.submit %>
+<% end %>

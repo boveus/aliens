@@ -1,4 +1,9 @@
 class AlienSighting < ApplicationRecord
+  validates :date_posted, presence: true
+  validates :city, presence: true
+  validates :country, presence: true
+  validates :shape, presence: true
+  validates :duration_in_seconds, presence: true
 
   def location
     "#{city}, #{state}, #{country}"
@@ -95,6 +100,10 @@ class AlienSighting < ApplicationRecord
 
   def self.all_shapes
     distinct.pluck(:shape)
+  end
+
+  def self.all_countries
+    distinct.pluck(:country)
   end
 
   def self.calculate_count_by_year(number = 10)

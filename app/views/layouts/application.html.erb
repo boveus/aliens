@@ -16,6 +16,7 @@
   <header class=eqi-container>
     <%= link_to 'Analysis Dashboard', :dashboard %>
     <%= link_to 'Random sighting comments', :comments %>
+    <%= link_to 'Report a sighting', new_alien_sighting_path %>
     <div class="dropdown">
       <button onclick="heatMaps()" class="dropbtn">Heatmaps of the US</button>
       <div id="heatmaps" class="dropdown-content">
@@ -27,6 +28,9 @@
 
 
   <body>
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: name %>
+    <% end %>
     <%= yield %>
   </body>
 
