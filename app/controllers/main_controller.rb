@@ -47,6 +47,10 @@ include ChartHandler
     @sightings = AlienSighting.per_capita_sightings_hash
   end
 
+  def top_five_dates
+    @top_dates = AlienSighting.top_five_dates_by_count
+  end
+
   def comments
     @sighting = AlienSighting.random_sighting
   end

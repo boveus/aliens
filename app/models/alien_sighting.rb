@@ -49,7 +49,6 @@ class AlienSighting < ApplicationRecord
   def self.by_hour_of_day
     format_for_chart(
     group("date_part('hour', date_posted)")
-    .order("count(date_posted) DESC")
     .count)
   end
 
@@ -104,6 +103,13 @@ class AlienSighting < ApplicationRecord
 
   def self.all_countries
     distinct.pluck(:country)
+  end
+
+  def self.top_five_dates_by_count
+    group("date_trunc('day', date_posted)")
+    .order("count(date_posted) DESC")
+    .count(:id)
+    .first(5)
   end
 
   def self.calculate_count_by_year(number = 10)
