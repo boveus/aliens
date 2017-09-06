@@ -49,7 +49,8 @@ class AlienSighting < ApplicationRecord
   def self.by_hour_of_day
     format_for_chart(
     group("date_part('hour', date_posted)")
-    .count)
+    .count(:id)
+    .sort)
   end
 
   def self.shape_by_state(shape)
