@@ -2,3 +2,5 @@ This is a rails project to use a CSV containing UFO sightings to do some analysi
 
 To view the site on heroku, pleases see below:
 https://ufosightings.herokuapp.com/
+
+![screen shot 2018-04-11 at 6 54 30 pm](https://user-images.githubusercontent.com/20469703/38647359-db57c242-3db9-11e8-8f37-88410aff5538.png)
